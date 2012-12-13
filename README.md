@@ -5,6 +5,8 @@ Description
 ------------
 Application to log out users after a specified period of time. The user will see a prompt with a countdown asking them if they wish to log out or continue working ("More Time"). 
 
+Download app: [Idle Logout.app](https://github.com/rustymyers/IdleLogout/blob/master/IdleLogout%20app/Idle%20Logout.app1.0b1.zip?raw=true)
+
 Background
 ------------
 Idle Logout.app was written in RealStudio 2012 R2. It uses the ioreg command to determine how long USB devices have been idle. Once the idle limit is meet, the computer is forcibly restarted to log out any users.
