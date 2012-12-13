@@ -33,3 +33,9 @@ Default Values if plist is not installed:
 * ComputerIdleAfterNumSeconds = "600"
 * IdleLoopDelaySeconds = "30"
 * WaitForUserPromptSeconds = "90"
+
+Attribution
+------------
+Application Icon modified from original, used with CC license:
+From http://www.flickr.com/photos/23453447@N02/5107438855/sizes/o/in/photostream/
+By zyrquel: http://www.flickr.com/photos/23453447@N02/
