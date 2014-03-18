@@ -1,0 +1,1 @@
+#tag IDEScriptBuildStep	Begin IDEScriptBuildStep Script1 , AppliesTo = 0		'Build script for psuIdleLogout.app					End#tag IDEScriptBuildStep
