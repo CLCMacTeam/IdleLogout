@@ -16,7 +16,7 @@ The terminal command we use to check idle seconds on USB devices is:
 
 Important Notes
 -------------
-Idle Logout.app can be run at login with a LaunchAgent under the users context. **In order for the application to work, the /etc/sudoers file needs to be edited to allow all users to run the "psuRebootNow.pl" script (included in the repo under 'IdleLogout app' folder).** View the "IdleLogoutSudoers.sh" script (included in the repo under 'IdleLogout app' folder) to see what changes are made to the /etc/sudoers file. The script can be used as a postflight script in a package while deploying the app.
+Idle Logout.app should be run at login with a LaunchAgent under the users context. **In order for the application to work, the /Library/CLMadmin/psuForceLogOut.sh needs to allow all users to execute the script (included in the repo under 'IdleLogout app' folder).** The Idle Logout.app will write log files into the /Users/Shared/IdleLogout folder.
 
 Preferences
 -------------
@@ -27,6 +27,7 @@ The Idle Logout.app looks for a preference file in /Library/CLMadmin/Config name
 * ComputerIdleAfterNumSeconds = Number of seconds before considering the computer abandoned.
 * IdleLoopDelaySeconds = Number of seconds to wait between checking the usb idle seconds.
 * WaitForUserPromptSeconds = Number of seconds to wait for user to respond to logout prompt.
+* WindowTitle = Changes the name name shown in the logout window. Uses String.
 
 Default Values if plist is not installed:
 
@@ -35,6 +36,12 @@ Default Values if plist is not installed:
 * ComputerIdleAfterNumSeconds = "600"
 * IdleLoopDelaySeconds = "30"
 * WaitForUserPromptSeconds = "90"
+* WindowTitle = "PSU Idle Logout"
+
+ToDo
+-------------
+* The path to the logout script should be set in the preference file OR the script should be part of the app.
+* Add prefernece key for window wording.
 
 Attribution
 ------------
