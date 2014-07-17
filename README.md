@@ -20,7 +20,7 @@ Idle Logout.app should be run at login with a LaunchAgent under the users contex
 
 Preferences
 -------------
-The Idle Logout.app looks for a preference file in /Library/CLMadmin/Config named "edu.psu.its.clc.IdleLogoutSettings.plist" (included in the repo under 'IdleLogout app' folder). It looks for the following key/string pairs in the plist. If they are missing, it will use the defaults:
+The Idle Logout.app looks for the preference file "/Library/CLMadmin/Config/edu.psu.its.clc.IdleLogoutSettings.plist" (included in the repo under 'IdleLogout app' folder). It looks for the following key/string pairs in the plist. If they are missing, it will use the defaults:
 
 * IgnoreUser = Ignore the username, don't force logout.
 * IgnoreGroup = Ignore anyone in this group, don't force logout.
