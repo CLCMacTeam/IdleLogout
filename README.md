@@ -9,7 +9,7 @@ Download app: [Idle Logout.app](https://github.com/rustymyers/IdleLogout/blob/ma
 
 Background
 ------------
-Idle Logout.app was written in RealStudio 2012 R2. It uses the ioreg command to determine how long USB devices have been idle. Once the idle limit is meet, the computer is forcibly restarted to log out any users.
+Idle Logout.app was written in RealStudio 2014 R1. It uses the ioreg command to determine how long USB devices have been idle. Once the idle limit is meet, the computer is forcibly restarted to log out any users.
 
 The terminal command we use to check idle seconds on USB devices is:
 > /bin/echo $((`/usr/sbin/ioreg -c IOHIDSystem | /usr/bin/sed -e '/HIDIdleTime/ !{ d' -e 't' -e '}' -e 's/.* = //g' -e 'q'` / 1000000000))"
