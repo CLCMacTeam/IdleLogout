@@ -5,8 +5,7 @@ Description
 ------------
 Application to log out users after a specified period of time. The user will see a prompt with a countdown asking them if they wish to log out or continue working ("More Time"). 
 
-Download app: [Idle Logout.app](
-https://github.com/rustymyers/IdleLogout/blob/master/IdleLogout%20app/Idle%20Logout.app1.0b1.zip)
+Download app: [Idle Logout.app](https://github.com/CLCMacTeam/IdleLogout/blob/master/IdleLogout%20app/Idle%20Logout.app1.0b1.zip?raw=true)
 
 Background
 ------------
