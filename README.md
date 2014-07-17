@@ -42,6 +42,7 @@ ToDo
 -------------
 * The path to the logout script should be set in the preference file OR the script should be part of the app.
 * Add prefernece key for window wording.
+* Use CFPrefernces for pref file
 
 Attribution
 ------------
