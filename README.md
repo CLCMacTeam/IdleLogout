@@ -9,7 +9,7 @@ Download app: [Idle Logout.app](https://github.com/rustymyers/IdleLogout/blob/ma
 
 Background
 ------------
-Idle Logout.app was written in RealStudio 2012 R2. It uses the ioreg command to determine how long USB devices have been idle. Once the idle limit is meet, the computer is forcibly restarted to log out any users.
+Idle Logout.app was written in RealStudio 2014 R1. It uses the ioreg command to determine how long USB devices have been idle. Once the idle limit is meet, the computer is forcibly restarted to log out any users.
 
 The terminal command we use to check idle seconds on USB devices is:
 > /bin/echo $((`/usr/sbin/ioreg -c IOHIDSystem | /usr/bin/sed -e '/HIDIdleTime/ !{ d' -e 't' -e '}' -e 's/.* = //g' -e 'q'` / 1000000000))"
@@ -20,7 +20,7 @@ Idle Logout.app should be run at login with a LaunchAgent under the users contex
 
 Preferences
 -------------
-The Idle Logout.app looks for a preference file in /Library/CLMadmin/Config named "edu.psu.its.clc.IdleLogoutSettings.plist" (included in the repo under 'IdleLogout app' folder). It looks for the following key/string pairs in the plist. If they are missing, it will use the defaults:
+The Idle Logout.app looks for the preference file "/Library/CLMadmin/Config/edu.psu.its.clc.IdleLogoutSettings.plist" (included in the repo under 'IdleLogout app' folder). It looks for the following key/string pairs in the plist. If they are missing, it will use the defaults:
 
 * IgnoreUser = Ignore the username, don't force logout.
 * IgnoreGroup = Ignore anyone in this group, don't force logout.
@@ -42,6 +42,7 @@ ToDo
 -------------
 * The path to the logout script should be set in the preference file OR the script should be part of the app.
 * Add prefernece key for window wording.
+* Use CFPrefernces for pref file
 
 Attribution
 ------------
