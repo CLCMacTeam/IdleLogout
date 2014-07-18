@@ -41,6 +41,7 @@ Default Values if plist is not installed:
 ToDo
 -------------
 * The path to the logout script should be set in the preference file OR the script should be part of the app.
+** Make it part of the .app, create a new method to log out
 * Add prefernece key for window wording.
 * Use CFPrefernces for pref file
 
