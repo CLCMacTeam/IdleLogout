@@ -5,7 +5,7 @@ Description
 ------------
 Application to log out users after a specified period of time. The user will see a prompt with a countdown asking them if they wish to log out or continue working ("More Time"). Users can disable the Idle Logout process using the "Disable Idle Logout.applescript".
 
-Screen Shot of Count Down Window
+Screen Shot of Count Down Window:
 ![window]
 
 Download app: [Idle Logout.app](https://github.com/CLCMacTeam/IdleLogout/blob/LogoutNotRestart/IdleLogout%20app/Idle%20Logout.app1.1b2.zip)
@@ -62,6 +62,9 @@ Attribution
 Application Icon modified from original, used with CC license:
 From http://www.flickr.com/photos/23453447@N02/5107438855/sizes/o/in/photostream/
 By zyrquel: http://www.flickr.com/photos/23453447@N02/
+
+Full Screen Shot of Countdown Window:
+![full]
 
 [full]: https://github.com/CLCMacTeam/IdleLogout/blob/master/IdleLogout%20app/screenshots/full.png?raw=true "Full Screen Shot"
 [window]: https://github.com/CLCMacTeam/IdleLogout/blob/master/IdleLogout%20app/screenshots/window.png?raw=true "Windowed Screen Shot"
