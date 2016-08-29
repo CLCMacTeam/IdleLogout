@@ -8,7 +8,7 @@ Application to log out users after a specified period of time. The user will see
 Screen Shot of Count Down Window:
 ![window]
 
-Download app: [Idle Logout.app](https://github.com/CLCMacTeam/IdleLogout/blob/LogoutNotRestart/IdleLogout%20app/Idle%20Logout.app1.1b2.zip)
+Download app: [Idle Logout.app](https://github.com/CLCMacTeam/IdleLogout/releases)
 
 Background
 ------------
