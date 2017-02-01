@@ -15,7 +15,7 @@ Background
 Idle Logout.app was written in RealStudio 2014 R2.1. It uses the ioreg command to determine how long USB devices have been idle. Once the idle limit is meet, the computer is forcibly restarted to log out any users.
 
 The terminal command we use to check idle seconds on USB devices is:
-> /bin/echo $((`/usr/sbin/ioreg -c IOHIDSystem | /usr/bin/sed -e '/HIDIdleTime/ !{ d' -e 't' -e '}' -e 's/.* = //g' -e 'q'` / 1000000000))"
+> /bin/echo $((`/usr/sbin/ioreg -c IOHIDSystem | /usr/bin/sed -e '/HIDIdleTime/ !{ d' -e 't' -e '}' -e 's/.* = //g' -e 'q'` / 1000000000))
 
 Important Notes
 -------------
@@ -34,7 +34,8 @@ The Idle Logout.app looks for the preference file "/Library/CLMadmin/Config/edu.
 * ComputerIdleAfterNumSeconds = Number of seconds before considering the computer abandoned.
 * IdleLoopDelaySeconds = Number of seconds to wait between checking the usb idle seconds.
 * WaitForUserPromptSeconds = Number of seconds to wait for user to respond to logout prompt.
-* WindowTitle = Changes the name name shown in the logout window. Uses String.
+* WindowTitle = Changes the name shown in the logout window. Uses String.
+* WindowMessage = Changes the text shown on the logout window. Uses String.
 
 Default Values if plist is not installed:
 
@@ -44,15 +45,26 @@ Default Values if plist is not installed:
 * IdleLoopDelaySeconds = "30"
 * WaitForUserPromptSeconds = "90"
 * WindowTitle = "PSU Idle Logout"
+* WindowMessage = "This Mac is idle.\n\nClick the \"More Time\" button to continue using the Mac.\n\nOtherwise, an automatic logout will occur and all unsaved documents will be LOST!"
+
+Defaults can be set quickly for all users using defaults write:
+
+* defaults write /Library/Preferences/edu.psu.idlelogout.plist IgnoreUser -string clcclmadmin
+* defaults write /Library/Preferences/edu.psu.idlelogout.plist IgnoreGroup -string user
+* defaults write /Library/Preferences/edu.psu.idlelogout.plist ComputerIdleAfterNumSeconds -string 10
+* defaults write /Library/Preferences/edu.psu.idlelogout.plist IdleLoopDelaySeconds -string 5
+* defaults write /Library/Preferences/edu.psu.idlelogout.plist WaitForUserPromptSeconds -string 120
+* defaults write /Library/Preferences/edu.psu.idlelogout.plist WindowTitle -string "Our Idle Logout"
+* defaults write /Library/Preferences/edu.psu.idlelogout.plist WindowMessage "You're going to be logged out\n\n\nDude\!"
 
 ToDo
 -------------
-* Use CFPrefernces for pref file
-* Update code to Cocoa
-** Only update UI from main thread
+
 
 Completed
 ------------
+* 01/2017 - Updated preferences to use CFPrefsD through macoslibs.
+** Update code to Cocoa (Only update UI from main thread)
 * 01/2015 - The path to the logout script should be set in the preference file OR the script should be part of the app.
 ** 01/2015 - Make it part of the .app, create a new method to log out
 * 01/2015 - Add preference key for window wording.
