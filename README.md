@@ -5,29 +5,26 @@ Description
 ------------
 Application to log out users after a specified period of time. The user will see a prompt with a countdown asking them if they wish to log out or continue working ("More Time"). Users can disable the Idle Logout process using the "Disable Idle Logout.applescript".
 
+**The Idle Logout App will force close any applications the user has open. This will not save any data!**
+
 Screen Shot of Count Down Window:
 ![window]
 
 Download app: [Idle Logout.app](https://github.com/CLCMacTeam/IdleLogout/releases)
 
-Background
-------------
-Idle Logout.app was written in RealStudio 2014 R2.1. It uses the ioreg command to determine how long USB devices have been idle. Once the idle limit is meet, the computer is forcibly restarted to log out any users.
-
-The terminal command we use to check idle seconds on USB devices is:
-> /bin/echo $((`/usr/sbin/ioreg -c IOHIDSystem | /usr/bin/sed -e '/HIDIdleTime/ !{ d' -e 't' -e '}' -e 's/.* = //g' -e 'q'` / 1000000000))
-
-Important Notes
+Installation
 -------------
-Idle Logout.app should be run at login with a LaunchAgent under the users context. **UPDATE: The Idle Logout.app is self contained and will force a user logout without the need for external scripts!** The Idle Logout.app will write log files into the /Users/Shared/IdleLogout folder.
+
+The IdleLogout-V.v.pkg installs the Idle Logout.app into /Library/CLMshared/Startup Items/ and the [LaunchAgent](https://github.com/CLCMacTeam/IdleLogout/tree/master/IdleLogout%20Builds/LauchAgent) to open it in /Library/LaunchAgents/.
+
+The Idle Logout.app will write log files into the /Users/Shared/IdleLogout/ folder.
 
 You can deploy the "Disable Idle Logout.applescript", as a compiled app, to give users an easy way to stop the Idle Logout process. This is helpful in locations where users need to allow processes to run for longer than you're normal logout time.
 
-**The Idle Logout App will force close any applications the user has open. This will not save any data!**
 
 Preferences
 -------------
-The Idle Logout.app looks for the preference file "/Library/CLMadmin/Config/edu.psu.its.clc.IdleLogoutSettings.plist" (included in the repo under 'IdleLogout app' folder). It looks for the following key/string pairs in the plist. If they are missing, it will use the defaults:
+The Idle Logout.app looks for the preference file "/Library/Preferences/edu.psu.idlelogout.plist" (included in the repo under '[IdleLogout Builds/Preference/](https://github.com/CLCMacTeam/IdleLogout/tree/master/IdleLogout%20Builds/Preference)' folder). It looks for the following key/string pairs in the plist. If they are missing, it will use the defaults:
 
 * IgnoreUser = Ignore the username, don't force logout.
 * IgnoreGroup = Ignore anyone in this group, don't force logout.
@@ -57,9 +54,16 @@ Defaults can be set quickly for all users using defaults write:
 * defaults write /Library/Preferences/edu.psu.idlelogout.plist WindowTitle -string "Our Idle Logout"
 * defaults write /Library/Preferences/edu.psu.idlelogout.plist WindowMessage "You're going to be logged out\n\n\nDude\!"
 
+Background
+------------
+Idle Logout.app was written in Xojo 2015 R3. It uses the ioreg command to determine how long USB devices have been idle. Once the idle limit is meet, the computer is forcibly restarted to log out any users.
+
+The terminal command we use to check idle seconds on USB devices is:
+> /bin/echo $((`/usr/sbin/ioreg -c IOHIDSystem | /usr/bin/sed -e '/HIDIdleTime/ !{ d' -e 't' -e '}' -e 's/.* = //g' -e 'q'` / 1000000000))
+
 ToDo
 -------------
-* No Known Issues
+* No Known Issues - Please use GitHub Issues
 
 Completed
 ------------
