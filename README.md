@@ -67,10 +67,9 @@ ToDo
 
 Completed
 ------------
-* 01/2017 - Updated preferences to use CFPrefsD through macoslibs.
-** Update code to Cocoa (Only update UI from main thread)
+* 01/2017 - Updated preferences to use CFPrefsD through macoslibs. Update code to Cocoa (Only update UI from main thread).
 * 01/2015 - The path to the logout script should be set in the preference file OR the script should be part of the app.
-** 01/2015 - Make it part of the .app, create a new method to log out
+* 01/2015 - Make it part of the .app, create a new method to log out
 * 01/2015 - Add preference key for window wording.
 
 Attribution
@@ -82,5 +81,5 @@ By zyrquel: http://www.flickr.com/photos/23453447@N02/
 Full Screen Shot of Countdown Window:
 ![full]
 
-[full]: https://github.com/CLCMacTeam/IdleLogout/blob/master/IdleLogout%20app/screenshots/full.png?raw=true "Full Screen Shot"
-[window]: https://github.com/CLCMacTeam/IdleLogout/blob/master/IdleLogout%20app/screenshots/window.png?raw=true "Windowed Screen Shot"
+[full]: https://github.com/CLCMacTeam/IdleLogout/blob/master/IdleLogout%20Builds/screenshots/full.png?raw=true "Full Screen Shot"
+[window]: https://github.com/CLCMacTeam/IdleLogout/blob/master/IdleLogout%20Builds/screenshots/window.png?raw=true "Windowed Screen Shot"
