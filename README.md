@@ -1,3 +1,7 @@
+¡PROJECT MOVED!
+
+Find the latest commmits at [https://git.psu.edu/sysman/IdleLogout](https://git.psu.edu/sysman/IdleLogout)
+
 IdleLogout.app
 ==============
 
